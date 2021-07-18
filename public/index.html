@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>25:00 - Time to WORK!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+        font-family: 'Nunito', sans-serif;
+    }
+</style>
+<body class="bg-red-500 flex justify-center font-bold">
+    <!-- Copied the 
+        ***** pomofocus.io *****
+        with using tailwindcss.
+    -->
+    <!--Outer Div-->
+    <div class="border-none p-3">
+        <!--Nav Bar Top side-->
+        <div class="border-bottom text-white flex pb-3 space-x-40">
+            <p class="text-white p-2 font-bold flex justify-center items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>Pomofocus</p>
+            <div class="flex">
+                <button class="bg-red-400 p-2 flex justify-center items-center rounded-md mr-2 shadow"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z" clip-rule="evenodd" />
+                  </svg>Report</button>
+                <button class="bg-red-400 p-2 flex justify-center items-center rounded-md mr-2 shadow"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                  </svg>Setting</button>
+                <button class="bg-red-400 p-2 rounded-md flex justify-center items-center mr-2 shadow"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+                  </svg>Login</button>
+            </div>
+        </div>
+
+        <div class="relative pt-1 mb-5 pb-3">
+            <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-red-200">
+                <div style="width:30%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-300"></div>
+            </div>
+        </div>
+        <!--Inner side div-->
+        <div class="flex justify-center items-center flex-col bg-red-400 max-w-lg mr-10 ml-10 rounded-md" >
+            <!--Inner nav bar for clock option-->
+            <div class="text-white m-3 flex justify-around">
+                <button class="p-1 hover:bg-red-600 rounded-md"> Pomodoro</button>
+                <button class="p-1 hover:bg-red-600 rounded-md"> Short Break</button>
+                <button class="p-1 hover:bg-red-600 rounded-md"> Long Break</button>
+            </div>
+            <!--Clock-->
+            <div class="flex text-white pb-2 mb-2 text-8xl">
+                25:00
+            </div>
+            <!--Clock's footer-->
+            <div>
+                <!--TODO: Click efecktini yapmak shadow-lg yi kaldir, yerine STOP KOY, ses efekti????-->
+                <button class="bg-white text-red-500 font-black hover:bg-red-600 hover:text-red-100 flex items-center pl-10 pt-2 pb-2 pr-10 rounded-md mb-6 shadow-lg">START</button>
+            </div>
+        </div>
+        <!--Time to work p, it will change according to users decision on pomodoro, long break or short.-->
+        <div class="flex justify-center items-center text-white text-lg m-3 pt-5">
+            <p id="time-to">Time to work!</p>
+        </div>
+
+        <!--Task Menu-->
+        <div >
+            <!--Task p tag and option tag-->
+            <div class="flex justify-between border-b-2 border-white p-3 shadow-sm">
+                <p class="text-white text-xl font-extrabold">Tasks</p>
+                <p class="p-2 bg-red-400 text-gray-100 hover:text-white shadow-md rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" />
+                  </svg></p>
+            </div>
+        </div>
+        
+        <!--Add task Div-->
+        <div class="flex justify-center items-center space-x-3 overflow-x bg-red-600 bg-opacity-50 hover:bg-opacity-70 rounded-xl border-4 hover:border-gray-200 border-opacity-50 border-dashed mt-3 p-5 text-gray-300 text-opacity-50 hover:text-white">
+            <p class="flex" id="p-task"><svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
+              </svg>Add Task</p>
+        </div>
+
+    </div>
+</body>    
+</html>

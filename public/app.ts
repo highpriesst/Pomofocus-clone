@@ -12,34 +12,28 @@ let startCountDown;
 
 //Logic for 3 menu buttons above timer.
 pomodoro.addEventListener("click", () => {
-  body.classList.remove("bg-blue-600");
-  body.classList.remove("bg-green-500");
-  body.classList.add("bg-red-500");
-
-  minute.innerHTML = "25";
-  seconds.innerHTML = "00";
-  timeTo.innerHTML = "Time for work!";
+  setMode("red", 25, 0, "Time for a work!");
 });
 
 shortBreak.addEventListener("click", () => {
-  body.classList.add("bg-blue-600");
-  body.classList.remove("bg-green-500");
-  body.classList.remove("bg-red-500");
-
-  minute.innerHTML = "05";
-  seconds.innerHTML = "00";
-  timeTo.innerHTML = "Time for a break!";
+  setMode("blue", 5, 0, "Time for a break!");
 });
 
 longBreak.addEventListener("click", () => {
-  body.classList.remove("bg-blue-600");
-  body.classList.add("bg-green-500");
-  body.classList.remove("bg-red-500");
-
-  minute.innerHTML = "15";
-  seconds.innerHTML = "00";
-  timeTo.innerHTML = "Time for a break!";
+  setMode("green", 15, 0, "Time for a break!");
 });
+
+function setMode(color: string, minute: number = 0, second: number = 0, message: string = ""): void {
+  body.classList.remove("bg-blue-600");
+  body.classList.remove("bg-red-500");
+  body.classList.remove("bg-green-500");
+
+  body.classList.add("bg-" + color + "-500");
+
+  minute.innerHTML = minute.toString();
+  seconds.innerHTML = second.toString();
+  timeTo.innerHTML = message;
+}
 
 //changing start-to-stop, stop-to-start
 function buttonOnChange():void{
@@ -52,17 +46,27 @@ function buttonOnChange():void{
 
 //countdown for the clock
 function countDown():void{
-   
 }
 
-//pomodoro bittiginda otomatikman break e geciyor, break bittiginde ise otomatiman geri donuyor
-//otomatik olarak long break e gitmiyor ama long break otomatikman pomodoroa ya geri donuyor.s
+/* INFO pomodoro bittiginda otomatikman break e geciyor,
+break bittiginde ise otomatiman geri donuyor
+otomatik olarak long break e gitmiyor ama long break
+otomatikman pomodoroa ya geri donuyor.
+*/
 
-//minutes and seconds 
+// INFO minutes and seconds
 
 startButton.addEventListener('click', () =>{
 
     buttonOnChange();
-    //burada short break e gitmesi icin bi komut yazabiliriz.
+    // TODO Burada short break e gitmesi icin bi komut yazabiliriz.
 })
 
+/* TASKS
+[x] Pomodoro modunu degistirme islemi
+[ ] Pomodoro sayacini baslatmak icin kod ekle
+[ ] Pomodoro duraklatma
+[ ] Pomodoro session'i ni atlama
+[ ] Rapor ekrani ve raporlarin hazirlanmasi
+[ ] Task ekleme ve task'i guncelleyerek tamamlanmis konumuna gecirme
+*/

@@ -32,6 +32,7 @@ shortBreak.addEventListener("click", () => {
 });
 
 longBreak.addEventListener("click", () => {
+function setMode(color: string, minuteCount: number = 0, secondCount: number = 0, message: string = ""): void {
   body.classList.remove("bg-blue-600");
   body.classList.add("bg-green-500");
   body.classList.remove("bg-red-500");
@@ -43,7 +44,7 @@ longBreak.addEventListener("click", () => {
 
 //changing start-to-stop, stop-to-start
 function buttonOnChange():void{
-    if(startButton.innerHTML.includes('START')){
+    if(startButton.innerHTML == 'START'){
         startButton.innerHTML = "STOP";
     }else{
         startButton.innerHTML = "START";

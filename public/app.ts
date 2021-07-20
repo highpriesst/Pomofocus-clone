@@ -24,7 +24,7 @@ longBreak.addEventListener("click", () => {
 });
 
 function setMode(color: string, minuteCount: number = 0, secondCount: number = 0, message: string = ""): void {
-  body.classList.remove("bg-blue-600");
+  body.classList.remove("bg-blue-500");
   body.classList.remove("bg-red-500");
   body.classList.remove("bg-green-500");
 

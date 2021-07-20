@@ -6,7 +6,7 @@ Made a copy of it with [TailwindCSS](https://tailwindcss.com/) and [Heroicons](h
 
 <figure>
   <figcaption>Pomodoro</figcaption>
-  <img src="./first-page.png" style="height:400px; width:450px">
+  <img src="./pomodoro.png" style="height:400px; width:450px">
 </figure>
 
 <figure>

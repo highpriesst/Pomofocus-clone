@@ -23,21 +23,21 @@ longBreak.addEventListener("click", () => {
   setMode("green", 15, 0, "Time for a break!");
 });
 
-function setMode(color: string, minute: number = 0, second: number = 0, message: string = ""): void {
+function setMode(color: string, minuteCount: number = 0, secondCount: number = 0, message: string = ""): void {
   body.classList.remove("bg-blue-600");
   body.classList.remove("bg-red-500");
   body.classList.remove("bg-green-500");
 
   body.classList.add("bg-" + color + "-500");
 
-  minute.innerHTML = minute.toString();
-  seconds.innerHTML = second.toString();
+  minute.innerHTML = ConvertToString(minuteCount);
+  seconds.innerHTML = ConvertToString(secondCount);
   timeTo.innerHTML = message;
 }
 
 //changing start-to-stop, stop-to-start
 function buttonOnChange():void{
-    if(startButton.innerHTML.includes('START')){
+    if(startButton.innerHTML == 'START'){
         startButton.innerHTML = "STOP";
     }else{
         startButton.innerHTML = "START";
@@ -61,6 +61,13 @@ startButton.addEventListener('click', () =>{
     buttonOnChange();
     // TODO Burada short break e gitmesi icin bi komut yazabiliriz.
 })
+
+function ConvertToString(value: number): string{
+  return value.toLocaleString('en-US', {
+    minimumIntegerDigits: 2,
+    useGrouping: false
+  });
+}
 
 /* TASKS
 [x] Pomodoro modunu degistirme islemi

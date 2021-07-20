@@ -56,7 +56,8 @@ function countDown():void{
 }
 
 //pomodoro bittiginda otomatikman break e geciyor, break bittiginde ise otomatiman geri donuyor
-//otomatik olarak long break e gitmiyor ama long break otomatikman pomodoroa ya geri donuyor.s
+//otomatik olarak long break e gitmiyor ama long break otomatikman pomodoroa ya geri donuyor.
+//4.work den sonra otomatikman long break e gecmesi gerekiyor.s
 
 //minutes and seconds 
 

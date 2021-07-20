@@ -22,7 +22,7 @@ function setMode(color, minuteCount, secondCount, message) {
     if (minuteCount === void 0) { minuteCount = 0; }
     if (secondCount === void 0) { secondCount = 0; }
     if (message === void 0) { message = ""; }
-    body.classList.remove("bg-blue-600");
+    body.classList.remove("bg-blue-500");
     body.classList.remove("bg-red-500");
     body.classList.remove("bg-green-500");
     body.classList.add("bg-" + color + "-500");

@@ -10,7 +10,12 @@ var timeTo = document.getElementById("time-to");
 var startButton = document.querySelector("#startButton");
 var timer = document.querySelector('#timer');
 var counter = 0;
-var timeleft = 1500;
+var timeleft = 5;
+//audio variables
+var startSound = new Audio('startSound.mp3');
+var stopsound = new Audio('stopSound.mp3');
+var switchSound = new Audio('switchSound.mp3');
+var finished = new Audio('finished.mp3');
 //update for html before timer
 //bu fonksiyon inner html i editliyor ve geri donuyor.
 function convertToSeconds(s) {
@@ -22,17 +27,27 @@ var currentTimer = convertToSeconds(timeleft - counter);
 function timeIt() {
     counter++;
     currentTimer = convertToSeconds(timeleft - counter);
-    console.log(currentTimer);
+    if (counter == timeleft) {
+        finished.play();
+        clearInterval();
+    }
+    //console.log(currentTimer);
 }
 //Logic for 3 menu buttons above timer.
 pomodoro.addEventListener("click", function () {
     setMode("red", 25, 0, "Time to work!");
+    timeleft = 1500;
+    switchSound.play();
 });
 shortBreak.addEventListener("click", function () {
     setMode("blue", 5, 0, "Time for a break!");
+    timeleft = 300;
+    switchSound.play();
 });
 longBreak.addEventListener("click", function () {
     setMode("green", 15, 0, "Time for a break!");
+    timeleft = 900;
+    switchSound.play();
 });
 function setMode(color, minuteCount, secondCount, message) {
     if (minuteCount === void 0) { minuteCount = 0; }
@@ -42,19 +57,18 @@ function setMode(color, minuteCount, secondCount, message) {
     body.classList.remove("bg-red-500");
     body.classList.remove("bg-green-500");
     body.classList.add("bg-" + color + "-500");
-    minute.innerHTML = ConvertToString(minuteCount);
-    seconds.innerHTML = ConvertToString(secondCount);
     timeTo.innerHTML = message;
 }
 //changing start-to-stop, stop-to-start
 //works fine!
 function buttonOnChange() {
     if (startButton.innerHTML == 'START') {
+        startSound.play();
         startButton.innerHTML = "STOP";
-        timer.innerHTML = "25:00";
     }
     else {
         startButton.innerHTML = "START";
+        stopsound.play();
     }
 }
 /* INFO pomodoro bittiginda otomatikman break e geciyor,
@@ -76,7 +90,8 @@ function ConvertToString(value) {
 }
 /* TASKS
 [x] Pomodoro modunu degistirme islemi
-[ ] Pomodoro sayacini baslatmak icin kod ekle
+[x] Pomodoro sayacini baslatmak icin kod ekle
+[x] Ses Eklentileri
 [ ] Pomodoro duraklatma
 [ ] Pomodoro session'i ni atlama
 [ ] Rapor ekrani ve raporlarin hazirlanmasi

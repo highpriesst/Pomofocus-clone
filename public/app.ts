@@ -87,7 +87,7 @@ function ConvertToString(value: number): string{
 
 /* TASKS
 [x] Pomodoro modunu degistirme islemi
-[ ] Pomodoro sayacini baslatmak icin kod ekle
+[x] Pomodoro sayacini baslatmak icin kod ekle
 [ ] Pomodoro duraklatma
 [ ] Pomodoro session'i ni atlama
 [ ] Rapor ekrani ve raporlarin hazirlanmasi

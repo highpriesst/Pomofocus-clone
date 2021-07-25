@@ -10,7 +10,7 @@ var timeTo = document.getElementById("time-to");
 var startButton = document.querySelector("#startButton");
 var timer = document.querySelector('#timer');
 var counter = 0;
-var timeleft = 5;
+var timeleft = 1500;
 //audio variables
 var startSound = new Audio('startSound.mp3');
 var stopsound = new Audio('stopSound.mp3');
@@ -29,7 +29,6 @@ function timeIt() {
     currentTimer = convertToSeconds(timeleft - counter);
     if (counter == timeleft) {
         finished.play();
-        clearInterval();
     }
     //console.log(currentTimer);
 }
